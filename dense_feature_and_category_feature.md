@@ -12,3 +12,7 @@ https://blog.csdn.net/zwqjoy/article/details/110047122
 知识梳理」CTR模型中连续特征加入方法
    
    https://zhuanlan.zhihu.com/p/480030543
+   
+特征的重要度：
+  FiNiBet: 
+  https://blog.csdn.net/wuzhongqiang/article/details/118439590
