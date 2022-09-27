@@ -12,3 +12,7 @@ Evolutionary strategies:
     
     博客：visual evolutionary strategies(翻译版） https://www.yanxishe.com/blogDetail/5791
 
+Bayesian Optimization 的 acquisi-
+tion function： 
+    
+    https://ekamperi.github.io/machine%20learning/2021/06/11/acquisition-functions.html
