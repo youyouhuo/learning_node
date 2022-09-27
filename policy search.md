@@ -2,7 +2,7 @@
 
 truely random search:
 
-    (r+ - r-) 估计梯度的解释（对称采样法） https://paperexplained.cn/articles/article/sdetail/a6607282-20d0-4bbc-a45f-a7c3f122c206/
+    (r+ - r-) 估计梯度的解释（对称采样法） （PGPE) https://paperexplained.cn/articles/article/sdetail/a6607282-20d0-4bbc-a45f-a7c3f122c206/
 
 population-based:
   Population-based BBO methods manage a limited population of individuals, and generate new individuals randomly in the vicinity of the previous elite individuals.
