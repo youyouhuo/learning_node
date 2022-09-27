@@ -16,3 +16,7 @@ Bayesian Optimization 的 acquisi-
 tion function： 
     
     https://ekamperi.github.io/machine%20learning/2021/06/11/acquisition-functions.html
+
+策略梯度的简介：
+   
+   https://lilianweng.github.io/posts/2018-04-08-policy-gradient/
