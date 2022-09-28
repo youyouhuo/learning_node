@@ -29,6 +29,10 @@ tion function：
 (ppt)  Augmented Random Search
     
      https://cse.buffalo.edu/~avereshc/rl_spring20/Augmented_Random_Search_Gautam_Suryawanshi_Prajit_Krisshna_Kumar.pdf
+
+（blog) augmented Random Search
+    
+    https://towardsdatascience.com/introduction-to-augmented-random-search-d8d7b55309bd
    
 (cem) Cross-Entropy for Monte-Carlo Tree Search
 
