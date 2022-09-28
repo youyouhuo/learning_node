@@ -20,3 +20,14 @@ tion function：
 策略梯度的简介：
    
    https://lilianweng.github.io/posts/2018-04-08-policy-gradient/
+
+
+( ppt) Natural Policy Gradients, TRPO, PPO
+     
+     https://www.andrew.cmu.edu/course/10-703/slides/Lecture_NaturalPolicyGradientsTRPOPPO.pdf
+ 
+(ppt)  Augmented Random Search
+    
+     https://cse.buffalo.edu/~avereshc/rl_spring20/Augmented_Random_Search_Gautam_Suryawanshi_Prajit_Krisshna_Kumar.pdf
+   
+(cem) Cross-Entropy for Monte-Carlo Tree Search
