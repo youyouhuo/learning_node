@@ -31,3 +31,7 @@ tion function：
      https://cse.buffalo.edu/~avereshc/rl_spring20/Augmented_Random_Search_Gautam_Suryawanshi_Prajit_Krisshna_Kumar.pdf
    
 (cem) Cross-Entropy for Monte-Carlo Tree Search
+
+ (blog) natual policy gradients 
+    
+    https://jonathan-hui.medium.com/rl-natural-policy-gradient-actor-critic-using-kronecker-factored-trust-region-acktr-58f3798a4a93
