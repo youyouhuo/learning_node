@@ -52,5 +52,6 @@ tion function：
  
     https://machinelearningmastery.com/what-is-bayesian-optimization/
   
-  (paper) BOA The Bayesian Optimization Algorithm
+  (paper) BOA The Bayesian Optimization Algorithm
+  
     https://dl.acm.org/doi/pdf/10.5555/2933923.2933973
