@@ -47,3 +47,10 @@ tion function：
 （ppt)ddpg
  
     http://www.cs.sjsu.edu/faculty/pollett/masters/Semesters/Spring18/ujjawal/DDPG-Algorithm.pdf
+    
+ （blog) Bayesian Optimization
+ 
+    https://machinelearningmastery.com/what-is-bayesian-optimization/
+  
+  (paper) BOA The Bayesian Optimization Algorithm
+    https://dl.acm.org/doi/pdf/10.5555/2933923.2933973
