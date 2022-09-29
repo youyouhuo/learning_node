@@ -43,3 +43,7 @@ tion function：
 （blog) ddpg
     
     https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b
+
+（ppt)ddpg
+ 
+    http://www.cs.sjsu.edu/faculty/pollett/masters/Semesters/Spring18/ujjawal/DDPG-Algorithm.pdf
