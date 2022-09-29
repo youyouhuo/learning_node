@@ -39,3 +39,7 @@ tion function：
  (blog) natual policy gradients 
     
     https://jonathan-hui.medium.com/rl-natural-policy-gradient-actor-critic-using-kronecker-factored-trust-region-acktr-58f3798a4a93
+
+（blog) ddpg
+    
+    https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b
