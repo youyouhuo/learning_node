@@ -58,3 +58,10 @@ Evolutionary strategies:
  (blog) bayesian optimization hyperparameter
  
  https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f
+ 
+ (paper) A tutorial on
+bayesian optimization of expensive cost functions, with
+application to active user modeling and hierarchical reinforcement
+learning.
+
+    https://www.cs.ubc.ca/~nando/papers/bayopt.pdf
