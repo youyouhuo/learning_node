@@ -12,11 +12,6 @@ Evolutionary strategies:
     
     博客：visual evolutionary strategies(翻译版） https://www.yanxishe.com/blogDetail/5791
 
-Bayesian Optimization 的 acquisi-
-tion function： 
-    
-    https://ekamperi.github.io/machine%20learning/2021/06/11/acquisition-functions.html
-
 策略梯度的简介：
    
    https://lilianweng.github.io/posts/2018-04-08-policy-gradient/
@@ -55,3 +50,11 @@ tion function：
   (paper) BOA The Bayesian Optimization Algorithm
   
     https://dl.acm.org/doi/pdf/10.5555/2933923.2933973
+  
+  Bayesian Optimization 的 acquisition function： 
+    
+    https://ekamperi.github.io/machine%20learning/2021/06/11/acquisition-functions.html
+ 
+ (blog) bayesian optimization hyperparameter
+ 
+ https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f
