@@ -65,3 +65,7 @@ application to active user modeling and hierarchical reinforcement
 learning.
 
     https://www.cs.ubc.ca/~nando/papers/bayopt.pdf
+    
+  （blog） open-es 梯度推导
+  
+  https://stats.stackexchange.com/questions/348111/how-is-the-equation-in-evolution-strategies-as-a-scalable-alternative-to-reinfo/348221#348221
