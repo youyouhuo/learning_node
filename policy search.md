@@ -69,3 +69,7 @@ learning.
   （blog） open-es 梯度推导
   
   https://stats.stackexchange.com/questions/348111/how-is-the-equation-in-evolution-strategies-as-a-scalable-alternative-to-reinfo/348221#348221
+  
+  (blog) es 
+  
+  https://lilianweng.github.io/posts/2019-09-05-evolution-strategies/
