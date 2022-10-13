@@ -73,3 +73,17 @@ learning.
   (blog) es 
   
   https://lilianweng.github.io/posts/2019-09-05-evolution-strategies/
+  
+  (blog) epsion-greedy vs softmax  q-leanring vs sarsa
+  
+  https://ai.stackexchange.com/questions/17603/what-is-the-difference-between-the-epsilon-greedy-and-softmax-policies
+    
+    The 𝜖-greedy policy is a policy that chooses the best action 
+    (i.e. the action associated with the highest value) with probability 1−𝜖∈[0,1] and a random action with probability 𝜖. 
+    The problem with 𝜖-greedy is that, when it chooses the random actions (i.e. with probability 𝜖), 
+    it chooses them uniformly (i.e. it considers all actions equally good), 
+    even though certain actions (even excluding the currently best one) are better than others. 
+    Of course, this approach is not ideal in the case certain actions are extremely worse than others. 
+    Therefore, a natural solution to this problem is to select the random actions with probabilities proportional to their current values. 
+    These policies are called softmax policies.
+  
