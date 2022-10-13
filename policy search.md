@@ -87,3 +87,13 @@ learning.
     Therefore, a natural solution to this problem is to select the random actions with probabilities proportional to their current values. 
     These policies are called softmax policies.
   
+  （blog) mdp
+  
+    https://juejin.cn/post/6859330833879154696
+    
+    强化学习任务通常使用马尔可夫决策过程（Markov Decision Process，简称MDP）来描述，具体而言：
+        机器处在一个环境中，每个状态为机器对当前环境的感知；
+        机器只能通过动作来影响环境，当机器执行一个动作后，会使得环境按某种概率转移到另一个状态；
+        同时，环境会根据潜在的奖赏函数反馈给机器一个奖赏。
+        综合而言，强化学习主要包含四个要素：状态、动作、转移概率以及奖赏函数。
+    
