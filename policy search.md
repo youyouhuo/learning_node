@@ -96,4 +96,10 @@ learning.
         机器只能通过动作来影响环境，当机器执行一个动作后，会使得环境按某种概率转移到另一个状态；
         同时，环境会根据潜在的奖赏函数反馈给机器一个奖赏。
         综合而言，强化学习主要包含四个要素：状态、动作、转移概率以及奖赏函数。
+        
+    (blog) actor-critic 
+    
+    https://towardsdatascience.com/understanding-actor-critic-methods-931b97b6df3f
+    
+    
     
