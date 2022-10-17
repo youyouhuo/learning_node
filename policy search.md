@@ -109,4 +109,6 @@ learning.
  (paper) cem
  
  CROSS-ENTROPY FOR MONTE-CARLO TREE SEARCH
+ Learning Tetris Using the Noisy Cross-Entropy Method
+ A Tutorial on the Cross-Entropy Method Pieter-Tjerk de Boer
     
