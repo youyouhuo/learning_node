@@ -89,7 +89,7 @@ learning.
   
   （blog) mdp
   
-    https://juejin.cn/post/6859330833879154696
+  https://juejin.cn/post/6859330833879154696
     
     强化学习任务通常使用马尔可夫决策过程（Markov Decision Process，简称MDP）来描述，具体而言：
         机器处在一个环境中，每个状态为机器对当前环境的感知；
@@ -97,11 +97,16 @@ learning.
         同时，环境会根据潜在的奖赏函数反馈给机器一个奖赏。
         综合而言，强化学习主要包含四个要素：状态、动作、转移概率以及奖赏函数。
         
-    (blog) actor-critic 
+ 
+ (blog) actor-critic 
     
-    https://towardsdatascience.com/understanding-actor-critic-methods-931b97b6df3f
+ https://towardsdatascience.com/understanding-actor-critic-methods-931b97b6df3f
     
-    (blog) multi-armed-bandit
+ (blog) multi-armed-bandit
     
-    https://lilianweng.github.io/posts/2018-01-23-multi-armed-bandit/
+ https://lilianweng.github.io/posts/2018-01-23-multi-armed-bandit/
+ 
+ (paper) cem
+ 
+ CROSS-ENTROPY FOR MONTE-CARLO TREE SEARCH
     
