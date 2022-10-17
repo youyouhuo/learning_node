@@ -101,5 +101,7 @@ learning.
     
     https://towardsdatascience.com/understanding-actor-critic-methods-931b97b6df3f
     
+    (blog) multi-armed-bandit
     
+    https://lilianweng.github.io/posts/2018-01-23-multi-armed-bandit/
     
