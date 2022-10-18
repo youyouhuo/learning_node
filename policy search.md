@@ -110,5 +110,5 @@ learning.
  
  CROSS-ENTROPY FOR MONTE-CARLO TREE SEARCH
  Learning Tetris Using the Noisy Cross-Entropy Method
- A Tutorial on the Cross-Entropy Method Pieter-Tjerk de Boer
+ A Tutorial on the Cross-Entropy Method Pieter-Tjerk de Boer  中文的简单翻译： https://blog.csdn.net/ppp8300885/article/details/80567682
     
