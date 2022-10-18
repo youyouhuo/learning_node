@@ -43,9 +43,10 @@
   因此文中谈到，Ne的比例实践中在[0:01; 0:1].
   &emsp;&emsp;另一个，如何理解cem中ce呢，在[cem with mcts][2]中提到，cross-entropy distance 也就是 $${D_{ce}(g|h)=\int{g(x)log(\frac{g(x)}{h(x)})dx}}$$
   
-  这里g(x)是最优的分布，而h(x)是我们elite sample生成的分布，最终h(x)会收敛到g(x)。当我们的参数服从高斯分布时，我们只要估计h(x)的均值和方差就可以了。当然为了防止更新的步子迈得太大，在[cem with mcts][2]中提到，更新参数的时候, $${\mu_{t+1} =\alpha*\mu_{t} + (1-\alpha)*\mu_{eli}}$$ 。
-  同理 $$\sigma_{t+1}=\alpha * \sigma_{t}+(1-\alpha)*\sigma_{eli}$$  是这样。
-  
+  这里g(x)是最优的分布，而h(x)是我们elite sample生成的分布，最终h(x)会收敛到g(x)。当我们的参数服从高斯分布时，我们只要估计h(x)的均值和方差就可以了。当然为了防止更新的步子迈得太大，在[cem with mcts][2]中提到，更新参数的时候, $${\mu_{t+1} =\alpha*\mu_{t} + (1-\alpha)*\mu_{eli}}$$ 
+
+  $${\sigma_{t+1} = \alpha *  \sigma_t + (1- \alpha ) * \sigma_{eli} }$$。
+  就这样吧。
   
   
 [1]: https://en.wikipedia.org/wiki/Cross-entropy_method
