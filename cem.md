@@ -1,4 +1,4 @@
-# Augmented Random Search
+# Cross-Entropy Method
   
   &emsp;&emsp;cross-entropy for monte-carlo tree search
   &emsp;&emsp;A Tutorial on the Cross-Entropy Method
@@ -40,14 +40,14 @@
   ### 1.2 几个关键参数的选取
     
   &emsp;&emsp;在[cem with mcts][2]中提到，topN（elite sample）的选取中，如果Ne很大，也就是很多组内参数用来预估最优分布，一个问题就是收敛太慢，
-  因此文中谈到，Ne的比例实践中在[0:01; 0:1].
-  &emsp;&emsp;另一个，如何理解cem中ce呢，在[cem with mcts][2]中提到，cross-entropy distance 也就是 $${D_{ce}(g|h)=\int{g(x)log(\frac{g(x)}{h(x)})dx}}$$
+  因此文中谈到，Ne的比例实践中在[0:01; 0:1].<br></br>&emsp;&emsp;另一个，如何理解cem中ce呢，在[cem with mcts][2]中提到，cross-entropy distance 也就是 $${D_{ce}(g|h)=\int{g(x)log(\frac{g(x)}{h(x)})dx}}$$
   
-  这里g(x)是最优的分布，而h(x)是我们elite sample生成的分布，最终h(x)会收敛到g(x)。当我们的参数服从高斯分布时，我们只要估计h(x)的均值和方差就可以了。当然为了防止更新的步子迈得太大，在[cem with mcts][2]中提到，更新参数的时候, $${\mu_{t+1} =\alpha*\mu_{t} + (1-\alpha)*\mu_{eli}}$$ 
-
-  $${\sigma_{t+1} = \alpha *  \sigma_t + (1- \alpha ) * \sigma_{eli} }$$。
-  就这样吧。
+  这里g(x)是最优的分布，而h(x)是我们elite sample生成的分布，最终h(x)会收敛到g(x)。当我们的参数服从高斯分布时，我们只要估计h(x)的均值和方差就可以了。当然为了防止更新的步子迈得太大，在[cem with mcts][2]中提到，更新参数的时候,引入alpha来调节，公式如下： $${\mu_{t+1} =\alpha*\mu_{t} + (1-\alpha)*\mu_{eli}}$$ 
+ $${\sigma_{t+1} = \alpha *  \sigma_t + (1- \alpha ) * \sigma_{eli} }$$
+  
+  此外，在[
   
   
 [1]: https://en.wikipedia.org/wiki/Cross-entropy_method
 [2]: cross-entropy for monte-carlo tree search
+[3]: Learning Tetris Using the Noisy Cross-Entropy Method
