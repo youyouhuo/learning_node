@@ -1,7 +1,9 @@
 # Cross-Entropy Method
   
   &emsp;&emsp;cross-entropy for monte-carlo tree search
+  
   &emsp;&emsp;A Tutorial on the Cross-Entropy Method
+  
   &emsp;&emsp;Learning Tetris Using the Noisy Cross-Entropy Method
   
 ## 0 前言
@@ -39,15 +41,24 @@
   ```    
   ### 1.2 几个关键参数的选取
     
-  &emsp;&emsp;在[cem with mcts][2]中提到，topN（elite sample）的选取中，如果Ne很大，也就是很多组内参数用来预估最优分布，一个问题就是收敛太慢，
-  因此文中谈到，Ne的比例实践中在[0:01; 0:1].<br></br>&emsp;&emsp;另一个，如何理解cem中ce呢，在[cem with mcts][2]中提到，cross-entropy distance 也就是 $${D_{ce}(g|h)=\int{g(x)log(\frac{g(x)}{h(x)})dx}}$$
-  
+  &emsp;&emsp;（1）在[cem with mcts][2]中提到，topN（elite sample）的选取中，如果Ne很大，也就是很多组内参数用来预估最优分布，一个问题就是收敛太慢，
+  因此文中谈到，Ne的比例实践中在[0:01; 0:1].
+  <br></br>&emsp;&emsp;（2）另一个，如何理解cem中ce呢，在[cem with mcts][2]中提到，cross-entropy distance 也就是 $${D_{ce}(g|h)=\int{g(x)log(\frac{g(x)}{h(x)})dx}}$$
   这里g(x)是最优的分布，而h(x)是我们elite sample生成的分布，最终h(x)会收敛到g(x)。当我们的参数服从高斯分布时，我们只要估计h(x)的均值和方差就可以了。当然为了防止更新的步子迈得太大，在[cem with mcts][2]中提到，更新参数的时候,引入alpha来调节，公式如下： $${\mu_{t+1} =\alpha*\mu_{t} + (1-\alpha)*\mu_{eli}}$$ 
  $${\sigma_{t+1} = \alpha *  \sigma_t + (1- \alpha ) * \sigma_{eli} }$$
-  
-  此外，在[
-  
-  
+  <br></br>&emsp;&emsp;（3）此外，在[cem with mcts][2]中提到由于我们从高斯分布中采样的参数是没有下界的，因此在一些业务场景中（比如参数不为负）我们需要舍弃一些参数，对于这些舍弃的参数，我们可以假设他们的得分是一个非常大的负分值，在这个假设上，整体算法就不需要改变。
+  此外，文中还提到通过采样时对参数取log，举例来说，假设参数的阈值是[0.1,100]，在普通情况下，50%概率取值在[0.1,50],50%概率取值在[50,100]，但是一些小的值，比如0.1到1之间可能就是我们的最优值，此时确很难被采样到，因此这里取log后，参数的值域就是一半是[0.1,3.16]一半是[3.16,100]。另外一点，文中还讲到，对参数进行离散化处理，因为文中的应用场景是蒙特拉罗树搜索，因此将参数都转化成整数值。
+<br></br>&emsp;&emsp;（4）在[ncem]中，提到cem方法在强化学习中，虽然收敛很快，但是容易进入到局部最优中，而一个解决方法就是通过加入噪声，文中以此提出了noisy cross-entropy method。
+
+
+
+## 2 cem的缺点
+
+  在[cem with mcts][2]中提到，cem收敛还是很慢的。主要是因为我们只使用了top Ne的样本来更新参数，剩下的参数中，很多参数已经表现不好了，我们还是也没有利用这部分信息。因此作者提出可以使用Multi-Armed Bandit algorithm 来加速学习。
+
+
+
+
 [1]: https://en.wikipedia.org/wiki/Cross-entropy_method
 [2]: cross-entropy for monte-carlo tree search
 [3]: Learning Tetris Using the Noisy Cross-Entropy Method
