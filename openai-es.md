@@ -57,7 +57,7 @@ def compute_centered_ranks(x):
 &emsp;&emsp; [virtual batch normalization][4]最早是一种训练gan的时候的加速技巧。我们都是知道batch normalization是在一个batch内，对所有的数据进行一个归一化。但是这种简单的归因化会出现一个问题，那就是一个输入x的输出高度依赖于同minibatch的其他样本。为了解决这个问题，virtual batch normalization引入一个reference batch，这个reference batch在训练一开始就指定好，然后其他batch就是在reference batch的统计信息之上进行归一化操作[quora-what is virtual batch normalization][5],[stackoverflow-what is virtual batch normalization][6],代码实现可以参考[virtual batch normalization-implement][7]。
 
 
-### 2.1 openai-es 基础版算法
+### 2 openai-es 算法
 
 &emsp;&emsp; 在补充完几个基本的知识后，我们来介绍openai-es的算法细节。具体可以看下图：
 
@@ -74,7 +74,11 @@ def compute_centered_ranks(x):
   (e) 在分布式的版本中，为了不同机器之间参数传递方便，在训练开始时就构建了一张随机分布数值表，通过在不同的机器上传递参数的下标，减少了传递参数量。文中也讲到，这种方式虽然是的不同迭代轮数之间的扰动并不相互独立，但是实际上并不会带来不利什么影响。
 
 
+### 3 进化算法 vs 策略梯度
 
+&emsp;&emsp; 在求解优化目标不能直接采用反向传播优化的问题时，为了估计参数的梯度，我们通常会加入噪声。策略梯度是在动作空间上添加噪声，比如得到动作的分布，然后采样出一个动作。而进化算法是在参数空间上添加噪声，通过 $\theta^r = \theta + \xi$ ,而最后获取动作是 $a=\pi(\theta^r)$ 可以认为是在原始的目标函数上添加Gaussian blur。
+
+&emsp;&emsp; 那两者的优势呢？策略梯度在动作空间上添加扰动，而求解梯度中，是根据 $\nabla_\theta \Sigma^T_{t=1}logp(a_t;\theta)$, 这里的T是每一步。而进化算法求解梯度中, $\nabla_\theta logp(\theta^r;\theta)$ 与episode的长度T无关。因此，在episode很长的情况下，进化算法还是有优势的，但是在较短的情况下，策略梯度可以降低我们梯度估计的方差，当然策略梯度在长T的情况下也可以引入值估计，但是这种方式会带来一定的bias。
 
 
 
