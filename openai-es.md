@@ -85,7 +85,10 @@ def compute_centered_ranks(x):
 
 
 
+## 4 总结
 
+&emsp;&emsp; openai-es是一篇基于用进化策略来训练dnn模型的文章，再一次将曾经的进化策略带入到大家的视线中。文中使用一些有用的技巧，如mirrored sampling，fitness shaping，这些技巧在其他的黑盒算法也可以使用，为了更好的训练dnn，也使用了类似batch normalization的vitual batch normalization。此外，文中还将基础算法推广到分布式的集群中，给广大的研究人员提供了一种新的思路，值得细读。
+  
 
   [1]: https://en.wikipedia.org/wiki/Cross-entropy_method
   [2]: https://www.jmlr.org/papers/volume15/wierstra14a/wierstra14a.pdf
