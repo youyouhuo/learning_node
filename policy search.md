@@ -112,3 +112,11 @@ learning.
  Learning Tetris Using the Noisy Cross-Entropy Method
  A Tutorial on the Cross-Entropy Method Pieter-Tjerk de Boer  中文的简单翻译： https://blog.csdn.net/ppp8300885/article/details/80567682
     
+(ppt) CMA-ES and Advanced Adaptation Mechanisms
+    
+    https://hal.inria.fr/hal-01959479/file/CmaTutorialGecco2018.pdf
+ 
+(blog-chinese simpler) The CMA Evolution Strategy: A Tutorial
+
+    https://blog.csdn.net/rui307/article/details/78744807
+ 
