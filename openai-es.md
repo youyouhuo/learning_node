@@ -29,7 +29,7 @@
  ### 1.3 背景知识-fitness shaping
  
  &emsp;&emsp; [fitness shaping][2]是一种对奖励进行变换的技巧。通过对奖励的分布做一个变换，降低一些离群点对整体的影响，防止陷入到局部最优。操作上，首先对奖励进行降序排列，然后根据排的序分别赋值。在[fitness shaping][2]原论文中，赋值逻辑是：
-  $$r_k=\frac{max(0,log(\frac\lambda2)+1-log(k))}{\Sigma^\lambda_{j=1}max(0,log(\frac\lambda2+1)-log(j))}-\frac1\lambda$$
+  $$r_k=\frac{max(0,log(\frac\lambda2+1)-log(k))}{\Sigma^\lambda_{j=1}max(0,log(\frac\lambda2+1)-log(j))}-\frac1\lambda$$
   
   这里 $r_1 >r_2>....>r_\lambda$,也就是根据奖励降序排列，而 $\lambda$ 是采样的个数。
   当然，openai-es在实现的过程中，并没有这么复杂的逻辑，而是将奖励大致缩放到[-0.5,0.5]之间，具体可以看下面的代码[openai fitness shapling][3]
