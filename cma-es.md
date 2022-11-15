@@ -17,9 +17,9 @@
   现在需要处理的就是，怎么计算m, $\sigma$ 和C.
   
   #### 1.1.2 整体流程之select and Recombination 
-  $$m^{(g+1)}=\sum ^\mu_{i=1}{w_i}{x}^{(g+1)}_{i:\lambda }$$
+  $$m^{(g+1)}=\sum ^\mu_{i=1}{w_i}{x}^{(g+1)}_{i:\lambda }\tag{6}$$
   
-  $${\sum^\mu_{i=1}{w_i}=1}$$
+  $${\sum^\mu_{i=1}{w_i}=1}\tag{7}$$
   
   $${w_1>=w_2>=w3>=......w_\mu>0}$$
   
