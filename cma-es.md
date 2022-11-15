@@ -17,10 +17,12 @@
   现在需要处理的就是，怎么计算m, $\sigma$ 和C.
   
   #### 1.1.2 整体流程之select and Recombination 
-  $$m^{(g+1)}=\sum ^\mu_{i=1}{w_i}{x}^{(g+1)}_{i:\lambda }\tag{6}$$
+  $$m^{(g+1)}=\sum ^\mu_{i=1}{w_i}{x}^{(g+1)}_{i:\lambda}\tag{6}$$
   
   $${\sum^\mu_{i=1}{w_i}=1}\tag{7}$$
   
   $${w_1>=w_2>=w3>=......w_\mu>0}$$
   
   这里 ${x}^{(g+1)}_{i:\lambda }$ 中的 $i:\lambda$表示的是在种群 $\lambda$中排序第i位置的参数（根据损失函数降序排列，损失越小，参数越优质，i越小）。此外 $\mu$是所选择的参数集合大小，通常 $\mu<=\lambda$。
+  
+  这里引入一个新的参数 $$\mu_{eff} = \frac{\sum^\mu_{i=1}{\left|w_i\right|}^2} {\sum^\mu_{i=1}w^2_i} \tag{8}$$
