@@ -8,5 +8,5 @@
 #2. 强化学习在美团"猜你喜欢"的应用 https://tech.meituan.com/2018/11/15/reinforcement-learning-in-mt-recommend-system.html
 #3. 强化学习在京东的应用 https://www.6aiq.com/article/1547826520120
 #4. youtube value-base的强化学习推荐系统 https://blog.csdn.net/weixin_44289754/article/details/119122740
-#5. 基于强化学习的推荐研究综述 （计算机科学）
+#5. 基于强化学习的推荐研究综述 （计算机科学）https://www.jsjkx.com/CN/article/openArticlePDF.jsp?id=20212
 
