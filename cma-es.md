@@ -33,5 +33,19 @@
   
   这里是，其中 ${c_m { \sum^ {\mu}_ {i=1} {w_i} } = 1}$。
   
-  测试。
+  
+  接下来是估计 Covariance Matrix，一个empirical covariance matrix是： 
+  
+  $$C^{(g+1)}_{emp} =  \frac{1}{\lambda-1} * coma \tag{10}$$
+  
+  $$coma = \sum^\lambda_{i=1} {((x^{(g+1)}_i-mu)*(x^{(g+1)}_i-mu)^T)}$$
+  
+  $$mu = \frac{1}{\lambda} \sum^\lambda_{j=1} {x^{(g+1)}_i}$$
+  
+  这里的 $C^{(g+1)}_{emp}$ 是 $C^{(g)}$的unbias estimator。此时我们考虑另一个版本：
+  
+  $$C^{(g+1)}_{\lambda} =  \frac{1}{\lambda} * coma \tag{11}$$
+  
+  $$coma = \sum^\lambda_{i=1} {((x^{(g+1)}_i-m^{(g)})*(x^{(g+1)}_i-m^{(g)})^T)}$$
+  
   
