@@ -6,4 +6,5 @@
  (blog)https://cloud.tencent.com/developer/article/1881235   （上面论文对应的博客）
  
 #2. 强化学习在美团"猜你喜欢"的应用 https://tech.meituan.com/2018/11/15/reinforcement-learning-in-mt-recommend-system.html
+#2. 强化学习在京东的应用 https://www.6aiq.com/article/1547826520120
 
