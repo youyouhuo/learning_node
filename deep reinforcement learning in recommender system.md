@@ -13,4 +13,5 @@
 #6. 强化学习在 美团 京东 微软的实践（知乎） https://zhuanlan.zhihu.com/p/355041851
 #7. (微软drn paper）DRN: A Deep Reinforcement Learning Framework for News Recommendation
 #8. 猜您所想：淘宝搜索/推荐系统背后深度强化学习与自适应在线学习的实践之路 https://toutiao.io/posts/9j6ze2/preview （原始链接 https://mp.weixin.qq.com/s/gKlyvv8hzlHRAOLRlVV3dw?）
+#8. 结合用户长短期兴趣的深度强化学习推荐方法（中文信息学报）  http://jcip.cipsc.org.cn/CN/Y2021/V35/I8/107
 
