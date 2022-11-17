@@ -23,5 +23,5 @@
 
 #9. 结合用户长短期兴趣的深度强化学习推荐方法（中文信息学报）  http://jcip.cipsc.org.cn/CN/Y2021/V35/I8/107
 
-#10. Flink + 强化学习搭建实时推荐系统（博客园）  https://www.cnblogs.com/massquantity/p/13842139.html
+#10. Flink + 强化学习搭建实时推荐系统（博客园---精读）  https://www.cnblogs.com/massquantity/p/13842139.html
 
