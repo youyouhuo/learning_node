@@ -60,4 +60,14 @@
   
   这里 $C^{(g+1)} _ {\mu}$更加倾向于产生一个被选择过的，比如成功的参数。
   
-  在公式
+  在公式11基础上，我们将公式12和Estimation of Multivariate Normal Algorithm 进行对比，这里 $EMNA _ {global}$具体形式如下，也叫 Cross-Entropy method：
+  
+  $$C^{(g+1)}_{EMNA_{global}} =  \frac{1}{\mu} * comc\tag{13}$$
+  
+  $$comc = \sum^\mu_{i=1} {((x^{(g+1)}_i-m^{(g+1)})*(x^{(g+1)}_i-m^{(g+1)})^T)}$$
+  
+  $$m^{(g+1)} = \frac{1}{\mu} \sum^\mu_{i=1} {x^{(g+1)}_i}$$
+  
+  和公式12相比，最重要的区别是使用计算使用的均值。公式13使用的是selecselec
+  
+  
