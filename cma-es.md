@@ -87,5 +87,5 @@
  $$ \frac {C^{(g+1)}_{\mu } } {{\sigma^{(g)}}^{2}} = \sum^{\mu} _ {i=1} w_i { y^ {(g+1)} _ {i:\lambda} } { y^{(g+1)} _ {i : \lambda} } ^T $$
 
 
- 这里  $C_\mu \approx min(1,\mu_{eff}/n^2)$ 是一个比较好的选择，而且  $wi$的和为1。
+ 这里  $C_\mu \approx min(1,\mu_{eff}/n^2)$ 是一个比较好的选择，而且  $wi$的和为1，而且 $y^ {(g+1)} _ {i:\lambda} = (x^ {(g+1)} _ {i:\lambda}-m^{(g)})/\sigma^{(g)} $。
  
