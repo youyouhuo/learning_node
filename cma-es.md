@@ -89,3 +89,5 @@
 
  这里  $C_\mu \approx min(1,\mu_{eff}/n^2)$ 是一个比较好的选择，而且  $wi$的和为1，而且 $y^ {(g+1)} _ {i:\lambda} = (x^ {(g+1)} _ {i:\lambda}-m^{(g)})/\sigma^{(g)} $。
  
+ 公式15也叫rank- $\mu$ -update ，因为式子中外积的求和是秩为 100%概率为 $min(\mu,n)$。
+ 
