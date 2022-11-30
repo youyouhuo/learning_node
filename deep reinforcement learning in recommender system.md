@@ -30,3 +30,4 @@
   使用 梯度不回传的beta网络处理离线训练中的data bias，
   为了降低状态空间，先使用近邻搜索K个，然后预估这k个action的值。
   为了降低方差，使用weight clipping
+  （blog)http://wd1900.github.io/2019/06/23/Top-K-Off-Policy-Correction-for-a-REINFORCE-Recommender-System-on-Youtube/
