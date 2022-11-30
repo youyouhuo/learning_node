@@ -25,3 +25,8 @@
 
 #10. Flink + 强化学习搭建实时推荐系统（博客园---精读）  https://www.cnblogs.com/massquantity/p/13842139.html
 
+#Top-𝐾 Off-Policy Correction for a REINFORCE Recommender System
+  整体上，使用了Chaos Free RNN (CFN) 建模状态之间的转移
+  使用 梯度不回传的beta网络处理离线训练中的data bias，
+  为了降低状态空间，先使用近邻搜索K个，然后预估这k个action的值。
+  为了降低方差，使用weight clipping
