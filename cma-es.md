@@ -93,3 +93,4 @@ $$ {c}^{(g+1)}=(1-{c}_{\mu }){C}^{(g)}+{c}_{\mu } \sum^{\mu} _ {i=1} w_i { y^ {(
  
  $${c}^{(g+1)}={C^{(g)}}^{1/2}(I+{c}_{\mu } \sum^{\lambda} _ {i=1} w_i ({ y^ {(g+1)} _ {i:\lambda} } { y^{(g+1)} _ {i : \lambda} } ^T-I)){C^{(g)}}^{1/2}$$
  
+ 这里 $w_i > w_\lambda$ 且 $\sum^{\lambda} _ {i=1} w_i\approx=0$  且 $\sum^{\mu} _ {i=1} w_i=0$
