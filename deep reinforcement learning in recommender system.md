@@ -33,4 +33,7 @@
   （blog)http://wd1900.github.io/2019/06/23/Top-K-Off-Policy-Correction-for-a-REINFORCE-Recommender-System-on-Youtube/
   
  #slateQ （blog) https://blog.csdn.net/zackerzhuang/article/details/100978955   与 https://blog.csdn.net/qq_16234613/article/details/105339645
+    整体上在排序层使用sarsa算法来进行学习。
+    2个基本假设：single choice：用户一次只在推荐列表中点击一个推荐项或不点击任何推荐项
+               RTDS(Reward/transition dependence on selection) 用户根据选择推荐项而会产生不同的回报和状态转移，没选择时，就是没有转移。
  
