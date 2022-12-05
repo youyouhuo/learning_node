@@ -32,5 +32,5 @@
   为了降低方差，使用weight clipping
   （blog)http://wd1900.github.io/2019/06/23/Top-K-Off-Policy-Correction-for-a-REINFORCE-Recommender-System-on-Youtube/
   
- #slateQ （blog) https://blog.csdn.net/zackerzhuang/article/details/100978955
+ #slateQ （blog) https://blog.csdn.net/zackerzhuang/article/details/100978955   与 https://blog.csdn.net/qq_16234613/article/details/105339645
  
