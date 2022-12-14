@@ -34,6 +34,28 @@
   
  #slateQ （blog) https://blog.csdn.net/zackerzhuang/article/details/100978955   与 https://blog.csdn.net/qq_16234613/article/details/105339645
     整体上在排序层使用sarsa算法来进行学习。
-    2个基本假设：single choice：用户一次只在推荐列表中点击一个推荐项或不点击任何推荐项
+    2个基本假设：
+              
+                single choice：用户一次只在推荐列表中点击一个推荐项或不点击任何推荐项
+               
                RTDS(Reward/transition dependence on selection) 用户根据选择推荐项而会产生不同的回报和状态转移，没选择时，就是没有转移。
+    
+ #jd-Deep Reinforcement Learning for List-wise Recommendations
+ 
+ 整篇文章核心是建立一个离线模拟器来模拟线上的推荐过程，没有进行真实的ab测试
+ 
+ 整体上采用ddpg来搭建：
+    
+    模拟时的奖励：
+    
+    
+    动作网络： 
+        每次推荐k个item
+        s->wt   通过状态学习k个w
+        动作产生： scoret=wt*embi    通过这k个w乘以item的embedding来计算最终的得分，然后每个位置取得分最高的item作为最终动作ai（前面位置取了就从后面位置的候选中删除）
+    critic网络：
+        输入st 和 ai......ak ，输出Q(st,at)    这里at是 k个item的统-表示
+        
+        
+    
  
