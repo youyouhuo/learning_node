@@ -65,4 +65,6 @@
         更新状态，并把st，at，rt，st+1保存起来，保存为D
         
         从D中采样N个样本，更新acotr和critic的的参数
+        
+  #jd1-Deep Reinforcement Learning for Page-wise Recommendations
     
