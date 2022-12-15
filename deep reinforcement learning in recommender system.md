@@ -57,7 +57,7 @@
         动作产生： scoret=wt*embi    通过这k个w乘以item的embedding来计算最终的得分，然后每个位置取得分最高的item作为最终动作ai（前面位置取了就从后面位置的候选中删除）
     critic网络：
         输入st 和 ai......ak ，输出Q(st,at)    这里at是 k个item的统-表示
-        
-        
     
- 
+    整体执行流程如下：    
+        
+        根据
