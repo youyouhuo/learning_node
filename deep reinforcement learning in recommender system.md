@@ -67,4 +67,7 @@
         从D中采样N个样本，更新acotr和critic的的参数
         
   #jd1-Deep Reinforcement Learning for Page-wise Recommendations
+      
+      知乎：https://zhuanlan.zhihu.com/p/59081462
+      
     
