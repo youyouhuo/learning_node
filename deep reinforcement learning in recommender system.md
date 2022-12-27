@@ -69,5 +69,30 @@
   #jd1-Deep Reinforcement Learning for Page-wise Recommendations
       
       知乎：https://zhuanlan.zhihu.com/p/59081462
+        
+        核心的贡献点：
+          1.提出一个能够学习一页中item怎么分布的推荐算法
+          2.提出一个基于ddpg的深度强化学习算法来学习
+         
+        状态构建：
+          
+          一页中的item看成是一个M=h*w 个item组成的2d内容。每一个item包含它的side info作为输出，即xi=(id,category,feedback),其中的feedback包含用户跳过，点击，购买等行为。
+          
+          把一页的item看成是一个2d的图片，使用卷积提取特征，pi=conv2d(Xi)
+          
+          p1,p2,....,pt又用gru来学习时间上的关系，得到h1,h2,.....ht
+          
+          使用attention结构来来从hi中学习到当前的真正状态s_current
+          
+       动作的构建：
+          a_current = deconv2d(s_current) ,值得注意的是，这里的a_current和pi是不同的，前者只包含了item的embedding信息，而后者还有side info和用户反馈信息。
       
+      
+       critic的构建：
+          
+          a_current是一个2d的包含item embedding信息的表示，要转化成最终的动作，还需要一步，a=conv2d(a_current),这里的a就是输入到dqn中的动作了。
+          
+          
+          
+    
     
