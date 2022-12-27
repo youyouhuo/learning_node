@@ -92,6 +92,30 @@
           
           a_current是一个2d的包含item embedding信息的表示，要转化成最终的动作，还需要一步，a=conv2d(a_current),这里的a就是输入到dqn中的动作了。
           
+       
+       训练流程：
+        
+          上面的a_current是一个2d的包含item embedding信息的表示，但是并不是每一个embedding都有对应的id，所以，还需要一个mapping的过程，找到最匹配的真实item id。
+          
+          在online training阶段，通过cosine 相似度将a_current 和 a_val 进行关联起来。然后可以把a_val推荐给用户，获取反馈 r=sum(reward(ei))
+          
+          在 offline training阶段，由于使用的是用户的历史记录，所以无论a_current 怎么变化，用户的有效动作都是固定的（因为用户只对那一批item有反馈）。
+         此时，a_current和a_val之间就有了gap，为了弥补这个gap，这里通过学习 mse(a_current,a_val),来让a_current 趋向于与a_val相似，
+         然后就可以使用a_val的信息来正常的学习更新网络了，这里的r=sum(reward(ei))来自a_val。（也就是在online trainning基础上，额外加上mse来消除a_current和a_val直接的gap)
+         
+         
+        训练算法：
+            
+            在训练过程中，使用的还是ddpg算法。值得注意的是，critic是采用replay buffer来batch训练，这里就涉及到一个动作的问题，这里的动作都是来源于a_val,a=conv2d(a_val)。
+            而actor训练中的动作来自于a_current,a=conv2d(a_current),因为a_current才是actor的真实输出。
+          
+        测试流程：
+          
+            online测试时，就是计算状态获取a_current，得到动作，计算a_val，计算奖励r=sum(reward(ei))，得到新状态。
+            
+            offline测试时，就是给定一个session，然后算法能将用户点击/购买的item排到前面。之所以使用排序来验证，是因为我们只有这个session的ground truth reward。
+            整体上也是计算状态获取a_current，得到动作，计算a_val，计算奖励r=sum(reward(ei))，得到新状态。
+            
           
           
     
