@@ -25,6 +25,9 @@
 
 #10. Flink + 强化学习搭建实时推荐系统（博客园---精读）  https://www.cnblogs.com/massquantity/p/13842139.html
 
+#11. 深度强化学习中稀疏奖励问题研究综述  https://www.jsjkx.com/CN/article/openArticlePDF.jsp?id=18935
+    
+
 #Top-𝐾 Off-Policy Correction for a REINFORCE Recommender System
   整体上，使用了Chaos Free RNN (CFN) 建模状态之间的转移
   使用 梯度不回传的beta网络处理离线训练中的data bias，
