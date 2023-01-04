@@ -26,6 +26,8 @@
 #10. Flink + 强化学习搭建实时推荐系统（博客园---精读）  https://www.cnblogs.com/massquantity/p/13842139.html
 
 #11. 深度强化学习中稀疏奖励问题研究综述  https://www.jsjkx.com/CN/article/openArticlePDF.jsp?id=18935
+
+#12. 强化学习在阿里的应用   http://techforum-img.cn-hangzhou.oss-pub.aliyun-inc.com/1517812754285/reinforcement_learning.pdf
     
 
 #Top-𝐾 Off-Policy Correction for a REINFORCE Recommender System
