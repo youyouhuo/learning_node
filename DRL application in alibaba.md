@@ -31,3 +31,10 @@
  $$click_{price} = \frac{g(s, a, ad^{second}) -  (a_2 * f_{a_3} (ctr, cvr) + a_4 * f_{a_5} (cvr, price))}{f_{a_1} (ctr) }$$
  
  这里ad和 $ad^{second}$分别表示相邻的第一个和第二个广告。
+ 
+ 系统设计：
+  离线模拟系统
+            离线模拟充分探索可能组合。
+             奖励 $r = click_{price} * ctr + \delta * ctr$ 其中 $\delta$是调节因子，调整点击率和扣费之间的平衡。同时，这里预估的ctr和真是的ctr还是有区别的，所以这里需要进行标定（Calibration），采用标定后的数据计算奖励。
+ 
+  线上系统
