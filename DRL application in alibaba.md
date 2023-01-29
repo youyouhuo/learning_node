@@ -38,4 +38,6 @@
   离线模拟时的奖励 $r = click_{price} * ctr + \delta * ctr$ 其中 $\delta$是调节因子，调整点击率和扣费之间的平衡。同时，这里预估的ctr和真是的ctr还是有区别的，所以这里需要进行标定（Calibration），采用标定后的数据计算奖励。
  
  强化学习模型的选择：考虑的2个因素 1）无法建模前后2个页面的关系，所以是一个offline-policy，2）动作是连续的 ，因此最终选择ddpg
+ 
+ 网络结构：    激活函数不使用sigmoid和relu，采用elu，同时critic采用 q（s，a）=v（s)+a（s,a)的方式。同时对动作进行clip。
   
