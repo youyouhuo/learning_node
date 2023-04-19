@@ -1,6 +1,8 @@
 
 ### 代码学习
 
+  https://github.com/openai/baselines/blob/master/baselines/ddpg
+
   https://keras.io/examples/rl/ddpg_pendulum/
 
   https://www.cnblogs.com/zle1992/p/10247326.html
