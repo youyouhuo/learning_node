@@ -6,6 +6,16 @@
 statistical features, such as the count of user behaviors and item
 exposures in each domain
 
+>> 2.pepnet实现上 https://zhuanlan.zhihu.com/p/611532716
+
+>>> 请教个问题， id特征作为gate的输入之后，还会同时作为主网络的输入吗
+
+>>> ppnet用独立一套id特征，不参与主网络计算，我的场景下这样做有收益
+
+>>> 是的，比如主网络用64维的uid，ppnet用32维的uid
+
+>>> 是指这个id特征的表征不共享 单独一套吧？这个特征本身主网络也有的吧
+
 >> 2. ppnet 个性化
 
 >>> user/item/author-side features (F𝑢/F𝑖/F𝑎) as personalized priors for PPNet（就是用户的个性化信息和item的个性化信息）： such as user ID, item ID, author ID (the producer of short videos in Kuaishou), and other side information features, e.g., user age/gender, item category/popularity,
