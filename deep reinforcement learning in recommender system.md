@@ -7,6 +7,7 @@
  (blog)https://cloud.tencent.com/developer/article/1881235   （上面论文对应的博客）
  
  
+ 
 #2. 强化学习在美团"猜你喜欢"的应用 https://tech.meituan.com/2018/11/15/reinforcement-learning-in-mt-recommend-system.html
 
 #3. 强化学习在京东的应用 https://www.6aiq.com/article/1547826520120
@@ -29,7 +30,9 @@
 
 #12. 强化学习在阿里的应用   http://techforum-img.cn-hangzhou.oss-pub.aliyun-inc.com/1517812754285/reinforcement_learning.pdf
     
-
+#13. 微信「看一看」 推荐排序技术揭秘 https://www.jiqizhixin.com/articles/2020-07-21-16
+> 基于上面的考虑，我们选择使用强化学习来进行多业务混排。用户在推荐场景浏览可以建模成 ov Progress，Agent 是我们的推荐系统，Action 是我们推荐了什么内容，Reward 是用户的反馈信息，包括点击、负反馈、退出等，每次我们的推荐系统 Agent 采取某个 Action，给用户推荐了内容，用户给到我们相应的反馈，通过最优化总点击数来获得最佳效果。
+ 未来有不确定因素，所以要对未来的收益做衰减 
 #Top-𝐾 Off-Policy Correction for a REINFORCE Recommender System
   整体上，使用了Chaos Free RNN (CFN) 建模状态之间的转移
   使用 梯度不回传的beta网络处理离线训练中的data bias，
