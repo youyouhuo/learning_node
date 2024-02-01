@@ -31,6 +31,8 @@
 #12. 强化学习在阿里的应用   http://techforum-img.cn-hangzhou.oss-pub.aliyun-inc.com/1517812754285/reinforcement_learning.pdf
     
 #13. 微信「看一看」 推荐排序技术揭秘 https://www.jiqizhixin.com/articles/2020-07-21-16
+
+#14. 强化学习在推荐系统的应用-转转的实例（ppo) https://blog.itpub.net/70027824/viewspace-2989872/
 > 基于上面的考虑，我们选择使用强化学习来进行多业务混排。用户在推荐场景浏览可以建模成 ov Progress，Agent 是我们的推荐系统，Action 是我们推荐了什么内容，Reward 是用户的反馈信息，包括点击、负反馈、退出等，每次我们的推荐系统 Agent 采取某个 Action，给用户推荐了内容，用户给到我们相应的反馈，通过最优化总点击数来获得最佳效果。
  未来有不确定因素，所以要对未来的收益做衰减 
 #Top-𝐾 Off-Policy Correction for a REINFORCE Recommender System
