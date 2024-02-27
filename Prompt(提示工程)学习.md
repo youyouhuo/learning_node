@@ -35,7 +35,10 @@ vs
 Use 2-3 sentences to explain the concept of prompt engineering to a high school student.
 ```
 >> * To do or not to do?:to avoid saying what not to do but say what to do instead,encourages more specificity and focuses on the details that lead to good responses from the model.
->> Examples of Prompts: Text Summarization(长话短说  Explain the above in one sentence: \  Explain xxx),Information Extraction(根据内容回答问题 Mention xxx mentioned in the paragraph above:),Question Answering(给内容和问题，求解答 Question: What was OKT3 originally sourced from?）,Text Classification,Conversation,Code Generation,Reasoning 
+
+> Examples of Prompts: Text Summarization(长话短说  Explain the above in one sentence: \  Explain xxx),Information Extraction(根据内容回答问题 Mention xxx mentioned in the paragraph above:),Question Answering(给内容和问题，求解答 Question: What was OKT3 originally sourced from?）,Text Classification（文本分类）,Conversation,Code Generation,Reasoning （比如 What is 9,000 * 9,000?)
+
+> Zero-Shot Prompting
 
 
 
