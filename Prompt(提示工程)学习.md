@@ -39,6 +39,13 @@ Use 2-3 sentences to explain the concept of prompt engineering to a high school 
 > Examples of Prompts: Text Summarization(长话短说  Explain the above in one sentence: \  Explain xxx),Information Extraction(根据内容回答问题 Mention xxx mentioned in the paragraph above:),Question Answering(给内容和问题，求解答 Question: What was OKT3 originally sourced from?）,Text Classification（文本分类）,Conversation,Code Generation,Reasoning （比如 What is 9,000 * 9,000?)
 
 > Zero-Shot Prompting
+>> didn't provide the model with any examples of text,When zero-shot doesn't work, it's recommended to provide demonstrations or examples in the prompt which leads to few-shot prompting
+```
+Classify the text into neutral, negative or positive. 
+Text: I think the vacation is okay.
+Sentiment:
+```
+>> https://www.promptingguide.ai/techniques/fewshot
 
 
 
