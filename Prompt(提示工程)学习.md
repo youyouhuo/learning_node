@@ -45,8 +45,26 @@ Classify the text into neutral, negative or positive.
 Text: I think the vacation is okay.
 Sentiment:
 ```
->> https://www.promptingguide.ai/techniques/fewshot
+> Few-Shot Prompting
 
+>> Few-shot prompting can be used as a technique to enable in-context learning where we provide demonstrations in the prompt to steer the model to better performance
+```
+A "whatpu" is a small, furry animal native to Tanzania. An example of a sentence that uses the word whatpu is:
+We were traveling in Africa and we saw these very cute whatpus.
+To do a "farduddle" means to jump up and down really fast. An example of a sentence that uses the word farduddle is:
+```
+
+>>> tips
+
+>>> * the label space and the distribution of the input text specified by the demonstrations are both important (regardless of whether the labels are correct for individual inputs)(label的空间和输入的文本空间同等重要【无论输入的label是否是正确的))
+>>> * the format you use also plays a key role in performance, even if you just use random labels, this is much better than no labels at all.(在prompt的时候，使用的格式很重要，即使你使用随机的label，也好过没有label)
+>>> * selecting random labels from a true distribution of labels (instead of a uniform distribution) also helps.（从标签的真实分布中选择随机标签（而不是均匀分布）也有所帮助。)
+
+>>> Limitations of Few-shot Prompting
+
+>>> * few-shot prompting works well for many tasks but is still not a perfect technique, especially when dealing with more complex reasoning tasks.(普通任务可能完成的不错，但是在resoning task中，表现就没那么ok了----最新的gpt4还ok)
+
+> Chain-of-Thought Prompting https://www.promptingguide.ai/techniques/cot
 
 
 
