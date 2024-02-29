@@ -64,7 +64,33 @@ To do a "farduddle" means to jump up and down really fast. An example of a sente
 
 >>> * few-shot prompting works well for many tasks but is still not a perfect technique, especially when dealing with more complex reasoning tasks.(普通任务可能完成的不错，但是在resoning task中，表现就没那么ok了----最新的gpt4还ok)
 
-> Chain-of-Thought Prompting https://www.promptingguide.ai/techniques/cot
+> Chain-of-Thought Prompting
+>> * intermediate reasoning steps： chain-of-thought (CoT) prompting enables complex reasoning capabilities through intermediate reasoning steps. You can combine it with few-shot prompting to get better results on more complex tasks that require reasoning before responding (cot可以通过中间推理步骤实现复杂的推理能力。可以通过与few-shot prompting进行结合在复杂的需要推理的任务上获取更好的结果。）
+```
+The odd numbers in this group add up to an even number: 4, 8, 9, 15, 12, 2, 1.
+A: Adding all the odd numbers (9, 15, 1) gives 25. The answer is False.
+The odd numbers in this group add up to an even number: 17,  10, 19, 4, 8, 12, 24.
+A: Adding all the odd numbers (17, 19) gives 36. The answer is True.
+The odd numbers in this group add up to an even number: 16,  11, 14, 4, 8, 13, 24.
+A: Adding all the odd numbers (11, 13) gives 24. The answer is True.
+The odd numbers in this group add up to an even number: 17,  9, 10, 12, 13, 4, 2.
+A: Adding all the odd numbers (17, 9, 13) gives 39. The answer is False.
+The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1. 
+A:
+```
+> Zero-shot COT Prompting
+>> * adding "Let's think step by step" to the original prompt : One recent idea that came out more recently is the idea of zero-shot CoT,just add "Let's think step by step" to the original prompt
+```
+I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples did I remain with?
+Let's think step by step.
+```
+> Automatic Chain-of-Thought (Auto-CoT)
+>> * chain-of-thought prompting and  "Let's think step by step" prompt  can still end up with mistakes in generated chains.(前面两种方法还是可能得到错误的结果，因此Auto-CoT 尝试自动的进行处理以获取正确结果）
+>> * Auto-CoT, which samples questions with diversity and generates reasoning chains to construct the demonstrations（通过多样化的采样，然后使用推理链来构建最终的结果）Auto-CoT consists of two main stages:
+>>> * Stage 1): question clustering: partition questions of a given dataset into a few clusters  （将给定的问题划分成几个clusters)
+>>> * Stage 2): demonstration sampling: select a representative question from each cluster and generate its reasoning chain using Zero-Shot-CoT with simple heuristics (从每个群集中选择一个代表性的问题，并使用简单的启发式方法使用Zero-Shot-CoT生成其推理链) The simple heuristics could be length of questions (e.g., 60 tokens) and number of steps in rationale (e.g., 5 reasoning steps).
+
+> https://www.promptingguide.ai/techniques/consistency
 
 
 
