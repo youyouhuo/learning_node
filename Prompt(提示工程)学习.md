@@ -90,6 +90,8 @@ Let's think step by step.
 >>> * Stage 1): question clustering: partition questions of a given dataset into a few clusters  （将给定的问题划分成几个clusters)
 >>> * Stage 2): demonstration sampling: select a representative question from each cluster and generate its reasoning chain using Zero-Shot-CoT with simple heuristics (从每个群集中选择一个代表性的问题，并使用简单的启发式方法使用Zero-Shot-CoT生成其推理链) The simple heuristics could be length of questions (e.g., 60 tokens) and number of steps in rationale (e.g., 5 reasoning steps).
 
+> Self-Consistency:
+>> self-consistency aims "to replace the naive greedy decoding used in chain-of-thought prompting". The idea is to sample multiple, diverse reasoning paths through few-shot CoT, and use the generations to select the most consistent answer. This helps to boost the performance of CoT prompting on tasks involving arithmetic and commonsense reasoning.(自洽性的目标是“替代在思维链提示中使用的天真贪婪解码”。这个想法是通过少量示例的CoT，采样多个、多样的推理路径，并使用生成的结果来选择最一致的答案。这有助于提高CoT提示在涉及算术和常识推理任务上的性能。)
 > https://www.promptingguide.ai/techniques/consistency
 
 
