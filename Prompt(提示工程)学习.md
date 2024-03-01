@@ -91,8 +91,22 @@ Let's think step by step.
 >>> * Stage 2): demonstration sampling: select a representative question from each cluster and generate its reasoning chain using Zero-Shot-CoT with simple heuristics (从每个群集中选择一个代表性的问题，并使用简单的启发式方法使用Zero-Shot-CoT生成其推理链) The simple heuristics could be length of questions (e.g., 60 tokens) and number of steps in rationale (e.g., 5 reasoning steps).
 
 > Self-Consistency:
+
 >> self-consistency aims "to replace the naive greedy decoding used in chain-of-thought prompting". The idea is to sample multiple, diverse reasoning paths through few-shot CoT, and use the generations to select the most consistent answer. This helps to boost the performance of CoT prompting on tasks involving arithmetic and commonsense reasoning.(自洽性的目标是“替代在思维链提示中使用的天真贪婪解码”。这个想法是通过少量示例的CoT，采样多个、多样的推理路径，并使用生成的结果来选择最一致的答案。这有助于提高CoT提示在涉及算术和常识推理任务上的性能。)
-> https://www.promptingguide.ai/techniques/consistency
+
+> Generated Knowledge Prompting
+
+>> generate knowledge to be used as part of the prompt
+
+> Prompt Chaining
+
+>> break tasks into its subtasks. Once those subtasks have been identified, the LLM is prompted with a subtask and then its response is used as input to another prompt. This is what's referred to as prompt chaining where a task is split into subtasks with the idea to create a chain of prompt operations.(分而治之）
+
+>> Prompt chaining is useful to accomplish complex which an LLM might struggle to address if prompted with a very detailed prompt. In prompt chaining, chain prompts perform transformations or additional processes on the generated responses before reaching a final desired state.（完成复杂的问题）
+
+>> achieving better performance, prompt chaining helps to boost transparency of your LLM application, increases controllability, and reliability. This means that you can debug problems with model responses much easier and analyze and improve performance in the different stages that need improvement.（让回答更加可控，可靠，同时也更容易debug 问题)
+
+>https://www.promptingguide.ai/techniques/tot
 
 
 
