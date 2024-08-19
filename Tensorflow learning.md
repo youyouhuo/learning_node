@@ -70,6 +70,17 @@ out = tf.losses.log_loss(tf.reshape(label,[11,1]),tf.reshape(one,[11,1]),weights
 
 with tf.Session() as sess:
     print(sess.run(out))
+
+
+### tf.identity 用法
+
+     构建一个新的op，注意这里是通过 y=tf.identity(x） 构建一个新的op，也可以用于在不同设备之间的传递，见[This function can also be used to explicitly transfer tensors between devices. For example, to transfer a tensor in GPU memory back to host memory](https://www.tensorflow.org/api_docs/python/tf/identity)
+     
+     也多见于结合 tf.control_denpendencies() 进行使用，因为tf.control_denpendencies()内部是需要  https://stackoverflow.com/questions/34877523/in-tensorflow-what-is-tf-identity-used-for
+
+###  tf.control_denpendencies()  用法
+    比较经典的是 gradnorm的实现，需要注意的是，这里一定是 对执行有先后顺序的情况下来进行处理，一定是抓住依赖 ,一个应用见 grandorm 实现https://github.com/vpetren/gradnorm_tf/blob/master/gradnorm_tf.py
+    
    
    
    
