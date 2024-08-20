@@ -80,6 +80,12 @@ with tf.Session() as sess:
 
 ###  tf.control_denpendencies()  用法
     比较经典的是 gradnorm的实现，需要注意的是，这里一定是 对执行有先后顺序的情况下来进行处理，一定是抓住依赖 ,一个应用见 grandorm 实现https://github.com/vpetren/gradnorm_tf/blob/master/gradnorm_tf.py
+
+### tensorflow中模型加载 用法
+
+    https://blog.csdn.net/b876144622/article/details/79962727
+
+    https://cloud.tencent.com/developer/article/1882043
     
    
    
