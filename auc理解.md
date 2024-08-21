@@ -4,3 +4,5 @@
 ### 2.auc的计算  https://www.cnblogs.com/eilearn/p/14830482.html
 
 >> 核心理解：auc本质是计算 概率 P(pos>neg)，也就是随机取一对样本， 正样本排在负样本前面的概率
+
+### 3. auc 与业务的理解 （为什么搜索与推荐场景用AUC评价模型好坏？） https://mp.weixin.qq.com/s/e3qcSo8LPDf2S8TUvU6S1A
