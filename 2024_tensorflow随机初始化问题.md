@@ -19,4 +19,4 @@
 >>>简单解释来说，如果想要tensorflow的初始化是确定性的随机，就通过 tf.set_random_seed(1234) 函数，设置全局的随机种子。
 
 ### 值得注意的是，是否能固定随机种子，还存在另一个问题，那就是使用GPU的时候 [见](https://github.com/keras-team/keras/issues/12800)
->>> 此时需要使用 tesorflow-determinism
+>>>> 最新的解决方案  tesorflow-determinism 已经更新为  framework-reproducibility 了
