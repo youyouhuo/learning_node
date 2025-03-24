@@ -64,3 +64,12 @@
 - - save_multiple_objective_info()
   - ob.study.trials_dataframe().to_csv()
   - get_best_trials(ob)
+ 
+
+### 关于整个代码库的总体认识
+- 主要是借助optuna这个库的study来学习
+- 本库的核心贡献在于：
+- - 搭建对应的数据输入输出方式
+  - 通过在multiple_objective.objective()中构建权重的生成方式，以及对应的target聚合方式，让optuna可以有一个输入和目标能进行参数搜索
+  - 同时开发并行的方式，借助计算机的多处理器进行并行处理
+  - 当然，本库还有自定义的pcacaculator，这个也是没有用过，应该是来自于之前的一个项目叫mixician
