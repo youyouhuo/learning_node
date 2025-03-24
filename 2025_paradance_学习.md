@@ -38,3 +38,29 @@
   -  neg_rank_ratio 调用 calculator.calculate_neg_rank_ratio()
   -  inverse_pairs  调用 calculator.calculate_inverse_pair()
   -  tau 调用 calculator.calculate_tau()
+
+- multiple_objective.py
+- - __init__()
+  - - 如果 power_lower_bound < 0   self.dirichlet = False
+  - - 如果 self.calculator.equation_type not in ["free_style", "json"]  调用  self.calculator.value_scale()
+  - - 最后调用self._prepare_study()
+
+- - add_evaluator() 主要是解析使用的evaluate() flag 用来判别使用时那种计算方式，如auc wauc等等
+
+- - evaluate_custom_weights（）
+  - - 调用calculator.get_overall_score(weight)计算每一个公式的打分
+    - 调用evaluate_targets(）计算targets
+
+- - objective()
+  - 调用 construct_weights（）
+  - 调用 evaluate_custom_weights（）
+  - 计算最终多个target之间的聚合方式 如 formula = "2*targets[0]+targets[1]" 这里targets[0]，target[1] 可以是 auc ，wauc tau等等,返回最后的result，并打印每一行的效果
+
+- optimize_parallel.py
+  - parallel_optimize() 调用 multiple_objective.optimize(ntrials)
+  - optimize_run（） 如果 parallel=False，则不使用并行，直接调用obj.optimize()，否则使用并行 调用parallel_opimimze,最后进行保存save_study()
+
+- save_study.py
+- - save_multiple_objective_info()
+  - ob.study.trials_dataframe().to_csv()
+  - get_best_trials(ob)
