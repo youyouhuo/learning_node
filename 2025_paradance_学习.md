@@ -43,7 +43,8 @@
 - - __init__()
   - - 如果 power_lower_bound < 0   self.dirichlet = False
   - - 如果 self.calculator.equation_type not in ["free_style", "json"]  调用  self.calculator.value_scale()
-  - - 最后调用self._prepare_study()
+  - - 最后调用self._prepare_study()，这里会调用,这个direction就是最后的target是最大还是最小【maximize，minimize】
+      - self.study = optuna.create_study(direction=self.direction,study_name=self.study_name,storage=storage,load_if_exists=True,)
 
 - - add_evaluator() 主要是解析使用的evaluate() flag 用来判别使用时那种计算方式，如auc wauc等等
 
