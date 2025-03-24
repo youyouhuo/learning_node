@@ -10,3 +10,31 @@
 - neg_rank_ratio 标签列的值必须为 0（正样本）或 1（负样本） 核心公式： ratio = (2 * ∑(负样本排名)) / [(总样本数*2 - 负样本数 + 1) * 负样本数]   输出范围：(0, 1) 其中： 接近 1 → 负样本排名靠后（理想情况）接近 0 → 负样本排名靠前（需优化）
 - inverse_pairs  量化排序结果中「高质量条目排在低质量条目之后」的错误情况,逆序对权重和 = ∑(每个特征的逆序对数 × 对应权重) ,结果范围 [0, +∞)，值越小越好
 - tau  计算的是Kendall Tau相关系数，用于衡量两个变量之间的序数相关性。函数中的注释也提到，这个系数范围在-1到1之间，-1表示完全负相关，1表示完全正相关，0表示无相关性。
+### 关于optimization
+- base.py  _prepare_study(): 解析参数配置，同时初始化optuna的create_study()
+- base.py  optimize(): 调用study的optimize(self.objective,n_trails)
+- construct_weights.py construct_weights() 
+- - equation_type="sum" 调用  construct_first_order_weights
+  - equation_type="free_style" 或者 = "json" 调用 construct_free_style_weights()
+  - equation_type = "log_pca" 调用 construct_log_pca_weights（）
+  - equation_type = "product"  且 ob.first_order=True 调用 construct_power_weights（） + construct_first_order_weights
+  - 如果  ob.first_order=False 调用 construct_power_weights(ob, trial)
+  - 最后返回weights
+  - - construct_weights.py construct_power_weights(ob: "MultipleObjective", trial: optuna.Trial) 根据ob.dirichlet 是否为true返回指定的weight【这里更多的是对weight是否进行变换，如果b.dirichlet=false，则不修改weight
+  - - construct_weights.py construct_first_order_weights( ob: "MultipleObjective", trial: optuna.Trial) 根据 first_order_scale 的 upper_bound和 lower_bound 对权重进行约束约束到【np.power(10,weight[i] - lower_bound),np.power(10,weight[i] - upper_bound)】，如果max_min_scale_ratio不为空，还会进一步进行调整
+  - - construct_weights.py construct_free_style_weights(ob: "MultipleObjective", trial: optuna.Trial) 根据 free_style 的upper_bound和lower_bound来对weight进行约束，需要一一对应
+  - - construct_weights.py  construct_log_pca_weights（） 使用 pca_importance的 upper_bound和lower_bound来对weight进行约束，需要一一对应
+
+- evaluate_targets.py
+- -  pearson 调用 calculator.calculate_corrcoef()
+  -  portfolio 调用 calculator.calculate_portfolio_concentration()
+  -  distinct_count_portfolio  调用 calculator.calculate_distinct_count_portfolio_concentration（）
+  -  top_coverage 调用calculator.calculate_top_coverage（）
+  -  distinct_top_coverage 调用 calculator.calculate_distinct_top_coverage（）
+  -  wuauc 调用calculator.calculate_wuauc(）
+  -  auc 调用calculator.calculate_wuauc(）
+  -  woauc 调用calculator.calculate_woauc()
+  -  logmse 调用calculator.calculate_log_mse()
+  -  neg_rank_ratio 调用 calculator.calculate_neg_rank_ratio()
+  -  inverse_pairs  调用 calculator.calculate_inverse_pair()
+  -  tau 调用 calculator.calculate_tau()
