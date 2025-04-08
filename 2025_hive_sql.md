@@ -48,3 +48,42 @@ group by uid
 ;
 
 ```
+
+### sql学习
+
+https://blog.csdn.net/weixin_42499444/article/details/113319711
+
+### hive over 窗口函数
+https://www.cnblogs.com/erlou96/p/13590358.html
+
+### lead  lag 函数
+https://blog.csdn.net/kent7306/article/details/50441967
+https://zhuanlan.zhihu.com/p/349291325
+
+这两个函数可以在一次查询中取出同一字段的前N行的数据(lag)和后N行的数据(lead)作为独立的列,从而更方便地进行进行数据过滤，该操作可代替表的自联接，且效率更高
+
+LAG(col,n,DEFAULT) 用于统计窗口内往上第n行值
+第一个参数为列名，第二个参数为往上第n行（可选，默认为1），第三个参数为默认值（当往上第n行为NULL时候，取默认值，如不指定，则为NULL）
+
+比如 查询顾客上一次等购买时间：
+select lag(orderDate,1,"-9999") over(partition by name order by orderDate) as lastTimeOrder from xxxx.
+
+
+LEAD(col,n,DEFAULT) 用于统计窗口内往下第n行值
+第一个参数为列名，第二个参数为往下第n行（可选，默认为1），第三个参数为默认值（当往下第n行为NULL时候，取默认值，如不指定，则为NULL）
+
+
+### ntile() 函数：
+https://www.cnblogs.com/skyEva/p/7552129.html
+用于将分组数据按照顺序切分成n片，返回当前记录所在的切片值
+
+### percentile() 函数：
+https://blog.csdn.net/weixin_34203426/article/details/86015549
+
+中位数函数: percentile
+语法: percentile(BIGINT col, array(p1 [, p2]…)) 
+返回值: array<double>
+说明: 之后后面可以输入多个百分位数，返回类型也为array<double>，其中为对应的百分位数。
+举例：
+select percentile(score,<0.2,0.4>) from udftest； 取0.2，0.4位置的数据
+
