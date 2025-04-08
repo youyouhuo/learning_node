@@ -24,4 +24,27 @@
 >> 举例： order by score,age desc。 含义就是 score升序，age降序  
 >> 举例： order by score desc,age。 含义就是 score 降序，age升序。  
 >> 举例： order by score desc, age desc。 含义就是 score降序，age降序。  
-- 注意点6： 多字段排序可能会影响查询性能，特别对于大型数据集进行排序时，在进行多字段排序时，建议使用分区或索引来提高性能。  
+- 注意点6： 多字段排序可能会影响查询性能，特别对于大型数据集进行排序时，在进行多字段排序时，建议使用分区或索引来提高性能。
+
+### collet_list 保持原有顺序
+
+- https://zhuanlan.zhihu.com/p/608430746
+- 在collect_list之前进行distribute by  xxx sort by xxx 来进行保持
+
+```
+select 
+    uid,
+    collect_list(dates) as dates_list,
+    collect_list(score) as score_list
+from 
+(
+    select 
+        *
+    from 
+        base_data
+    distribute by uid sort by uid, dates asc
+)t0
+group by uid
+;
+
+```
