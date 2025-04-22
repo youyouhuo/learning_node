@@ -34,3 +34,16 @@
           
           将激活函数调整为relu，释放更多正值的潜力
           同时调整学习率0.001 -> 0.00001 查看叠加的效果
+
+### ddpg遇到问题 
+
+20230404 ddpg迭代记录
+目前尝试了3版：
+    i. reinforce版本
+    1. 各模型的weight和bias趋向于一致，也就是没有差异，也没有学习到知识
+    ii. reinforce + 线上weightbias初始化版本
+    1. 各模型的weight和bias基本一致，比原始的reinforce版本效果稍好些
+    a. 也存在所有用户都输出同一个值的问题，虽然weight和bias之间有些许差异
+    iii. ddpg版本
+    1. 参数震荡，同时奖励和loss也是震荡，输出动作 pmmbias 和pmmweight打到最小值上
+    a. 从网上的学习资料来看，可能是（1没有归一化，2网络层数太多），因此这里开发一版，尝试降低actor和critic层数的，记为change_v1
