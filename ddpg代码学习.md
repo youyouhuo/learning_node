@@ -3,6 +3,9 @@
 
   https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html
 
+  - 这里action 通过tanh(action)*bound 来得到指定范围内容动作取值
+  - 同时critic中  w1*state+w2*action + bias 来实现，听说这种方式 the action input skips the first layer. This is a design decision that has experimentally worked well
+
   https://github.com/openai/baselines/blob/master/baselines/ddpg
 
   https://keras.io/examples/rl/ddpg_pendulum/
