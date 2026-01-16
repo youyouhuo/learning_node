@@ -1,6 +1,11 @@
 ### 关于evaluator
 - wuauc 用户加权auc【如果 groupby不为空，则计算分组的auc，然后如果 weights_for_groups 不为空，则计算加权auc，否则计算多组的平均auc】
 - woauc 多级加权auc
+- cumulative_deviation 
+- - calculate_cumulative_deviation
+  - use_rerank
+  - n_quantiles
+  - 含义：计算目标列与总体分位数列在分位数上的累计偏差 
 - top_coverage ∑(前N%条目的目标列值) / 总值  使用 数值型列（收入、点击量等） 头部资源贡献效率 计算topn总和占总量的比例，类似 准确率
 - pearson 计算 Pearson correlation coefficient 【使用np.corrcoef 来计算】
 - portfolio 函数的作用是通过排序overall_score，计算目标列的累积比率，找到达到预期收益的阈值，并确定高于该阈值的数据比例。返回值是阈值和集中度，需要解释这两个值的意义。阈值是满足预期收益的最小overall_score，集中度是高于阈值的数据占比，集中度越低说明越集中，【使用，如找出贡献90%点击量的广告占比，定位贡献80%收入的用户群体，识别产生95%销售额的商品比例】
