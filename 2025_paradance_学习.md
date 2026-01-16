@@ -1,5 +1,5 @@
 ### 关于evaluator
-- wuauc 用户加权auc【如果 groupby不为空，则计算分组的auc，然后如果 weights_for_groups 不为空，则计算加权quc，否则计算多组的平均auc】
+- wuauc 用户加权auc【如果 groupby不为空，则计算分组的auc，然后如果 weights_for_groups 不为空，则计算加权auc，否则计算多组的平均auc】
 - woauc 多级加权auc
 - top_coverage ∑(前N%条目的目标列值) / 总值  使用 数值型列（收入、点击量等） 头部资源贡献效率 计算topn总和占总量的比例，类似 准确率
 - pearson 计算 Pearson correlation coefficient 【使用np.corrcoef 来计算】
