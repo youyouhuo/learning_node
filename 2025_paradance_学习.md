@@ -11,7 +11,9 @@
 - top_coverage ∑(前N%条目的目标列值) / 总值  使用 数值型列（收入、点击量等） 头部资源贡献效率 计算topn总和占总量的比例，类似 准确率
 - pearson 计算 Pearson correlation coefficient 【使用np.corrcoef 来计算】
 - portfolio 函数的作用是通过排序overall_score，计算目标列的累积比率，找到达到预期收益的阈值，并确定高于该阈值的数据比例。返回值是阈值和集中度，需要解释这两个值的意义。阈值是满足预期收益的最小overall_score，集中度是高于阈值的数据占比，集中度越低说明越集中，【使用，如找出贡献90%点击量的广告占比，定位贡献80%收入的用户群体，识别产生95%销售额的商品比例】
-- distinct_count_portfolio 与普通版的差异在于考虑了唯一性【使用，如分析前20%的视频覆盖了多少独特观众，确定贡献80%独特买家的商品比例，识别覆盖90%目标设备的广告条目】
+- distinct_count_portfolio
+- - calculate_distinct_count_portfolio_concentration
+  - 与普通版的差异在于考虑了唯一性【使用，如分析前20%的视频覆盖了多少独特观众，确定贡献80%独特买家的商品比例，识别覆盖90%目标设备的广告条目】
 - distinct_top_coverage ∑(前N%条目中的唯一值数) / 总唯一值数 适用 ID型列（用户ID、商品ID等） 头部资源覆盖广度 top_coverage关注的是数值的累积贡献，比如前5%的高分项贡献了多少总收入；而distinct_top_coverage关注的是覆盖了多少不同的实体，比如前5%的项覆盖了多少不同的用户ID。
 - logmse  计算 mean{ [log(true+1)-log(pred+1)]^2}的值 也就是计算mse
 - neg_rank_ratio 标签列的值必须为 0（正样本）或 1（负样本） 核心公式： ratio = (2 * ∑(负样本排名)) / [(总样本数*2 - 负样本数 + 1) * 负样本数]   输出范围：(0, 1) 其中： 接近 1 → 负样本排名靠后（理想情况）接近 0 → 负样本排名靠前（需优化）
