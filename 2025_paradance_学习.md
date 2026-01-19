@@ -7,6 +7,8 @@
   - n_quantiles
   - 含义：计算目标列与总体分位数列在分位数上的累计偏差
   - 简述：打分列进行排序，目标列进行排序，分不同的分位桶，计算桶内的 打分列 和 目标列 之间的均值相对偏差（不管正负),然后所有分桶内的偏差相加得到最终值
+- calculate_mean
+- - 计算总分列的均值 和 target列的均值 的差的绝对值  abs(mean_over_score-mean_target_score)
    
 - top_coverage ∑(前N%条目的目标列值) / 总值  使用 数值型列（收入、点击量等） 头部资源贡献效率 计算topn总和占总量的比例，类似 准确率
 - pearson 计算 Pearson correlation coefficient 【使用np.corrcoef 来计算】
