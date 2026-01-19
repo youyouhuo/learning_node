@@ -13,6 +13,7 @@
 - portfolio 函数的作用是通过排序overall_score，计算目标列的累积比率，找到达到预期收益的阈值，并确定高于该阈值的数据比例。返回值是阈值和集中度，需要解释这两个值的意义。阈值是满足预期收益的最小overall_score，集中度是高于阈值的数据占比，集中度越低说明越集中，【使用，如找出贡献90%点击量的广告占比，定位贡献80%收入的用户群体，识别产生95%销售额的商品比例】
 - distinct_count_portfolio
 - - calculate_distinct_count_portfolio_concentration
+  - 计算target有多少个取值，然后采用over_score进行降序排列，看over_score排到什么取值时，记为threshold，能覆盖 target的expected_coverage【如0.95】。然后再计算一下over_score中打分大于threshold的个数占总个数的比例。
   - 与普通版的差异在于考虑了唯一性【使用，如分析前20%的视频覆盖了多少独特观众，确定贡献80%独特买家的商品比例，识别覆盖90%目标设备的广告条目】
 - distinct_top_coverage ∑(前N%条目中的唯一值数) / 总唯一值数 适用 ID型列（用户ID、商品ID等） 头部资源覆盖广度 top_coverage关注的是数值的累积贡献，比如前5%的高分项贡献了多少总收入；而distinct_top_coverage关注的是覆盖了多少不同的实体，比如前5%的项覆盖了多少不同的用户ID。
 - logmse  计算 mean{ [log(true+1)-log(pred+1)]^2}的值 也就是计算mse
