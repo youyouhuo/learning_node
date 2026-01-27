@@ -1,6 +1,18 @@
 ### 关于evaluator
 - wuauc 用户加权auc【如果 groupby不为空，则计算分组的auc，然后如果 weights_for_groups 不为空，则计算加权auc，否则计算多组的平均auc】
 - woauc 多级加权auc
+- - 1. 获取 woauc_indices（数据子集索引）
+    2. 获取 sampler 和 boundary_dict
+    3. 遍历每个边界值 k:
+      - 如果分组：
+      - - 按分组计算每个组的 AUC（使用 calculate_score）
+      - - 使用权重计算加权平均或简单平均
+      - 如果不分组：
+      - - 直接计算整个数据集的 AUC
+      -将部分AUC添加到结果列表
+    4. 返回所有边界值的AUC列表
+
+
 
 - cumulative_deviation 
 - - calculate_cumulative_deviation
