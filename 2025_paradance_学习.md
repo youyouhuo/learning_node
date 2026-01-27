@@ -22,7 +22,14 @@
 - neg_rank_ratio
 - - calculate_neg_rank_ratio
 - - 标签列的值必须为 0（正样本）或 1（负样本） 核心公式： ratio = (2 * ∑(负样本排名)) / [(总样本数*2 - 负样本数 + 1) * 负样本数]   输出范围：(0, 1) 其中： 接近 1 → 负样本排名靠后（理想情况）接近 0 → 负样本排名靠前（需优化）【分子是负样本的排名之和，分母是负样本排在最后时的排名之和，最后的得分如果越匹配，则越好】
-  - 可以简单改写下 ratio=（∑(负样本排名))/ [(total*total+1)/2 - (pos*(pos+1))/2]
+  - 可以简单改写下 ratio=（∑(负样本排名))/ [(total*(total+1))/2 - (pos*(pos+1))/2]
+- portfolio
+- - calculate_portfolio_concentration
+  - 先根据overall_score降序，然后计算target_column的总和total_sum，然后计算target_column的cumsum ，也就是累计和，将累计和转化为比例（cumsum/total_sum),
+  - 然后计算在cumulative_ratio>expected_return 【默认0.95】范围内，overall_score的最大值max_overall_score
+  - 最后计算 overrall_score大于max_overall_score的个数/总个数，并返回
+  - 通俗解释，就是计算样本的集中度，要包含label的expected_return，需要overall_score取什么值，并且overall_score中有多少是大于这个值的
+
 - inverse_pairs  量化排序结果中「高质量条目排在低质量条目之后」的错误情况,逆序对权重和 = ∑(每个特征的逆序对数 × 对应权重) ,结果范围 [0, +∞)，值越小越好
 - tau  计算的是Kendall Tau相关系数，用于衡量两个变量之间的序数相关性。函数中的注释也提到，这个系数范围在-1到1之间，-1表示完全负相关，1表示完全正相关，0表示无相关性。
 ### 关于optimization
