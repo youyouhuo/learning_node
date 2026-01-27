@@ -1,6 +1,7 @@
 ### 关于evaluator
 - wuauc 用户加权auc【如果 groupby不为空，则计算分组的auc，然后如果 weights_for_groups 不为空，则计算加权auc，否则计算多组的平均auc】
 - woauc 多级加权auc
+
 - cumulative_deviation 
 - - calculate_cumulative_deviation
   - use_rerank
@@ -10,9 +11,15 @@
 - calculate_mean
 - - 计算总分列的均值 和 target列的均值 的差的绝对值  abs(mean_over_score-mean_target_score)
    
-- top_coverage ∑(前N%条目的目标列值) / 总值  使用 数值型列（收入、点击量等） 头部资源贡献效率 计算topn总和占总量的比例，类似 准确率
+- top_coverage
+- - calculate_top_coverage
+- - ∑(前N%条目的目标列值) / 总值  使用 数值型列（收入、点击量等） 头部资源贡献效率 计算topn总和占总量的比例，类似 准确率
+
 - pearson 计算 Pearson correlation coefficient 【使用np.corrcoef 来计算】
-- portfolio 函数的作用是通过排序overall_score，计算目标列的累积比率，找到达到预期收益的阈值，并确定高于该阈值的数据比例。返回值是阈值和集中度，需要解释这两个值的意义。阈值是满足预期收益的最小overall_score，集中度是高于阈值的数据占比，集中度越低说明越集中，【使用，如找出贡献90%点击量的广告占比，定位贡献80%收入的用户群体，识别产生95%销售额的商品比例】
+
+- portfolio
+- - 函数的作用是通过排序overall_score，计算目标列的累积比率，找到达到预期收益的阈值，并确定高于该阈值的数据比例。返回值是阈值和集中度，需要解释这两个值的意义。阈值是满足预期收益的最小overall_score，集中度是高于阈值的数据占比，集中度越低说明越集中，【使用，如找出贡献90%点击量的广告占比，定位贡献80%收入的用户群体，识别产生95%销售额的商品比例】
+
 - distinct_count_portfolio
 - - calculate_distinct_count_portfolio_concentration
   - 计算target有多少个取值，然后采用over_score进行降序排列，看over_score排到什么取值时，记为threshold，能覆盖 target的expected_coverage【如0.95】。然后再计算一下over_score中打分大于threshold的个数占总个数的比例。
@@ -30,8 +37,23 @@
   - 最后计算 overrall_score大于max_overall_score的个数/总个数，并返回
   - 通俗解释，就是计算样本的集中度，要包含label的expected_return，需要overall_score取什么值，并且overall_score中有多少是大于这个值的
 
+- proportion
+- calculate_proportion
+- - 计算 overall_score==target_value 的均值，比如100个item有10个相同，那均值就是0.1
+
+
+- std
+  - calculate_standard_deviation
+  - 计算方差
+
+
+
+
 - inverse_pairs  量化排序结果中「高质量条目排在低质量条目之后」的错误情况,逆序对权重和 = ∑(每个特征的逆序对数 × 对应权重) ,结果范围 [0, +∞)，值越小越好
-- tau  计算的是Kendall Tau相关系数，用于衡量两个变量之间的序数相关性。函数中的注释也提到，这个系数范围在-1到1之间，-1表示完全负相关，1表示完全正相关，0表示无相关性。
+- tau
+- - calculate_tau
+  - 计算的是Kendall Tau相关系数，用于衡量两个变量之间的序数相关性。函数中的注释也提到，这个系数范围在-1到1之间，-1表示完全负相关，1表示完全正相关，0表示无相关性。
+
 ### 关于optimization
 - base.py  _prepare_study(): 解析参数配置，同时初始化optuna的create_study()
 - base.py  optimize(): 调用study的optimize(self.objective,n_trails)
